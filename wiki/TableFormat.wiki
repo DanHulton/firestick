@@ -1,0 +1,19 @@
+#summary Basic format of recording table for DB
+
+= Introduction =
+
+* id
+
+* url
+
+* render_start
+
+* render_elapsed
+
+* total_queries
+
+* query
+
+* query_elapsed
+
+* post
