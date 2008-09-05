@@ -1,5 +1,7 @@
 #summary How to install firestick
 
+*Please ensure you use the .zip linked on the Project Home to install.*  The code in the Source tab is the full testing/development install.
+
 = Extracting the source =
 
 Simply extract the zip file into your /application directory.  The files are already in the appropriate subfolders.
