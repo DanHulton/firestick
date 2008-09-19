@@ -14,4 +14,14 @@ Make sure to grant all privileges on this database to your database users for yo
 
 = Configuration =
 
-Open /application/config/firestick.php and alter to your heart's content.  If you changed the database name when you created the template table, ensure you change "db_name" now.
+ * Open /application/config/firestick.php and alter to your heart's content.  If you changed the database name when you created the template table, ensure you change "db_name" now.
+ * Locate and change "$config['enable_hooks'] = FALSE;" in your config/config.php to "$config['enable_hooks'] = true;"
+ * Add the following to your config/hooks.php:
+{{{
+$hook['post_system'] = array(
+    'class'    => 'Firestick',
+    'function' => 'resolve_profiling',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+}}}
