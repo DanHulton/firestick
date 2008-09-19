@@ -10,6 +10,12 @@
 |
 */
 
+$hook['post_system'] = array(
+    'class'    => 'Firestick',
+    'function' => 'resolve_profiling',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
 
 
 /* End of file hooks.php */

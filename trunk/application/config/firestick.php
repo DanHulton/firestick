@@ -5,17 +5,10 @@
 | Log Frequency Settings
 |--------------------------------------------------------------------------
 |
-| Determines how often benchmarks are logged.  Use either FIRESTICK_LOG_ALL
-| to log all requests, or FIRESTICK_LOG_RANDOM to log a random sample (one
-| percent).
+| Determines how often benchmarks are logged.  100 = 100% = all the time.
 */
 
-if (!defined('FIRESTICK_LOG_ALL')) {
-    define('FIRESTICK_LOG_ALL', 'all');
-    define('FIRESTICK_LOG_RANDOM', 'random');
-}
-
-$config['log_frequency'] = FIRESTICK_LOG_ALL;
+$config['log_frequency'] = 100;
 
 /*
 |--------------------------------------------------------------------------
