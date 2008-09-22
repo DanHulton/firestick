@@ -1,4 +1,5 @@
 #summary How to install firestick
+#labels Featured
 
 *Please ensure you use the .zip linked on the Project Home to install.*  The code in the Source tab is the full testing/development install.
 
