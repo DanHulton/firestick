@@ -25,3 +25,19 @@ $hook['post_system'] = array(
     'filepath' => 'libraries'
 );
 }}}
+ * Add the following to your config/database.php:
+{{{
+$db['logs']['hostname'] = "localhost";
+$db['logs']['username'] = "";
+$db['logs']['password'] = "";
+$db['logs']['database'] = "logs";
+$db['logs']['dbdriver'] = "mysql";
+$db['logs']['dbprefix'] = "";
+$db['logs']['pconnect'] = TRUE;
+$db['logs']['db_debug'] = TRUE;
+$db['logs']['cache_on'] = FALSE;
+$db['logs']['cachedir'] = "";
+$db['logs']['char_set'] = "utf8";
+$db['logs']['dbcollat'] = "utf8_general_ci";
+}}}
+ * Ensure that username and password are both set, and the username in question has full access to the logs database.
