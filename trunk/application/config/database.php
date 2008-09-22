@@ -37,18 +37,31 @@
 $active_group = "default";
 $active_record = TRUE;
 
+$db['default']['db_debug'] = true;  // Development
+$db['default']['username'] = "comingup-db";
+$db['default']['password'] = "comingup";
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "";
-$db['default']['password'] = "";
-$db['default']['database'] = "";
+$db['default']['database'] = "comingup";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
+$db['default']['pconnect'] = true;
+$db['default']['cache_on'] = false;
 $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
+
+$db['logs']['hostname'] = "localhost";
+$db['logs']['username'] = "comingup-db";
+$db['logs']['password'] = "comingup";
+$db['logs']['database'] = "logs";
+$db['logs']['dbdriver'] = "mysql";
+$db['logs']['dbprefix'] = "";
+$db['logs']['pconnect'] = TRUE;
+$db['logs']['db_debug'] = TRUE;
+$db['logs']['cache_on'] = FALSE;
+$db['logs']['cachedir'] = "";
+$db['logs']['char_set'] = "utf8";
+$db['logs']['dbcollat'] = "utf8_general_ci";
 
 
 /* End of file database.php */
