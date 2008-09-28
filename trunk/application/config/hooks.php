@@ -10,13 +10,26 @@
 |
 */
 
+$hook['post_controller_constructor'] = array(
+    'class'    => 'Firestick',
+    'function' => 'pre_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+
+$hook['post_controller'] = array(
+    'class'    => 'Firestick',
+    'function' => 'post_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+
 $hook['post_system'] = array(
     'class'    => 'Firestick',
     'function' => 'resolve_profiling',
     'filename' => 'Firestick.php',
     'filepath' => 'libraries'
 );
-
 
 /* End of file hooks.php */
 /* Location: ./system/application/config/hooks.php */

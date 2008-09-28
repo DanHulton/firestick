@@ -47,10 +47,26 @@ class Firestick {
     function Firestick() {
         $this->CI =& get_instance();
         
-        // Load firestick configuration
-        $this->CI->config->load('firestick', true);
-        $this->log_frequency = $this->CI->config->item('log_frequency', 'firestick');
-        $this->db_name = $this->CI->config->item('db_name', 'firestick');
+        if (!is_null($this->CI)) {
+            // Load firestick configuration
+            $this->CI->config->load('firestick', true);
+            $this->log_frequency = $this->CI->config->item('log_frequency', 'firestick');
+            $this->db_name = $this->CI->config->item('db_name', 'firestick');
+        }
+    }
+    
+    /**
+     * Sets a benchmark point before the application code runs.
+     */
+    function pre_application() {
+        $this->CI->benchmark->mark('pre_controller');
+    }
+    
+    /**
+     * Records the total amount of time taken for the application code.
+     */
+    function post_application() {
+        $this->CI->benchmark->mark('post_controller');
     }
     
     /**
@@ -75,6 +91,12 @@ class Firestick {
             
             // Total elapsed script time
             $render_elapsed = $this->CI->benchmark->elapsed_time('total_execution_time_start', 'total_execution_time_end');
+            
+            // Controller elapsed script time
+            $controller_elapsed = $this->CI->benchmark->elapsed_time('pre_controller', 'post_controller');
+            
+            // CodeIgniter elapsed script time
+            $ci_elapsed = $render_elapsed - $controller_elapsed;
             
             // DB calls
             if ( ! class_exists('CI_DB_driver')) {
@@ -123,6 +145,8 @@ class Firestick {
                     referrer,
                     memory,
                     render_elapsed,
+                    ci_elapsed,
+                    controller_elapsed,
                     mysql_count_queries,
                     mysql_queries,
                     mysql_elapsed
@@ -133,6 +157,8 @@ class Firestick {
                     '" . @$_SERVER['HTTP_REFERER'] . "',
                     '$memory',
                     '$render_elapsed',
+                    '$ci_elapsed',
+                    '$controller_elapsed',
                     '$mysql_count_queries',
                     '$mysql_queries',
                     '$mysql_elapsed'

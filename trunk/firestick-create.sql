@@ -10,7 +10,9 @@ CREATE TABLE logs.firestick_log_template (
                             default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
     memory                  INT UNSIGNED NOT NULL,
     render_elapsed          FLOAT NOT NULL,
+    ci_elapsed              FLOAT NOT NULL,
+    controller_elapsed      FLOAT NOT NULL,
+    mysql_elapsed           FLOAT NOT NULL,
     mysql_count_queries     TINYINT UNSIGNED NOT NULL,
-    mysql_queries           TEXT NOT NULL,
-    mysql_elapsed           FLOAT NOT NULL
+    mysql_queries           TEXT NOT NULL
 ) ENGINE=ARCHIVE;
