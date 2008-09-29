@@ -1,3 +1,5 @@
+#summary How to upgrade from 1.0 to 1.1
+
 === Upgrading the source ===
 
 Simply extract the zip file into your /application directory.  The files are already in the appropriate subfolders.
