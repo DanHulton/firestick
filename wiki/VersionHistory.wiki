@@ -1,0 +1,8 @@
+#summary Changes through the ages.
+
+=== Version 1.1 ===
+
+ * Added the ability to view amount of time spent in actual application code vs. CodeIgniter code.
+
+=== Version 1.0 ===
+ * First release.
