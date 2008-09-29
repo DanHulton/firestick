@@ -3,17 +3,17 @@
 
 *Please ensure you use the .zip linked on the Project Home to install.*  The code in the Source tab is the full testing/development install.
 
-= Extracting the source =
+=== Extracting the source ===
 
 Simply extract the zip file into your /application directory.  The files are already in the appropriate subfolders.
 
-= Creating the template table =
+=== Creating the template table ===
 
 Run the "create.sql" script as a user with schema create privileges.  You may alter the database name (default "logs") if you wish to store your performance logs in a different database.
 
 Make sure to grant all privileges on this database to your database users for your application.
 
-= Configuration =
+=== Configuration ===
 
  * Open /application/config/firestick.php and alter to your heart's content.  If you changed the database name when you created the template table, ensure you change "db_name" now.
  * Locate and change "$config['enable_hooks'] = FALSE;" in your config/config.php to "$config['enable_hooks'] = true;"
