@@ -1,4 +1,5 @@
 #summary Changes through the ages.
+#labels Featured
 
 === Version 1.1 ===
 
