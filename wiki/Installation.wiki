@@ -9,7 +9,7 @@ Simply extract the zip file into your /application directory.  The files are alr
 
 === Creating the template table ===
 
-Run the "create.sql" script as a user with schema create privileges.  You may alter the database name (default "logs") if you wish to store your performance logs in a different database.
+Run the "firestick-create.sql" script as a user with schema create privileges.  You may alter the database name (default "logs") if you wish to store your performance logs in a different database.
 
 Make sure to grant all privileges on this database to your database users for your application.
 
@@ -19,6 +19,20 @@ Make sure to grant all privileges on this database to your database users for yo
  * Locate and change "$config['enable_hooks'] = FALSE;" in your config/config.php to "$config['enable_hooks'] = true;"
  * Add the following to your config/hooks.php:
 {{{
+$hook['post_controller_constructor'] = array(
+    'class'    => 'Firestick',
+    'function' => 'pre_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+
+$hook['post_controller'] = array(
+    'class'    => 'Firestick',
+    'function' => 'post_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+
 $hook['post_system'] = array(
     'class'    => 'Firestick',
     'function' => 'resolve_profiling',
