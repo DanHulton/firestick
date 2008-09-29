@@ -1,13 +1,28 @@
-#summary One-sentence summary of this page.
+= Upgrading the source =
 
-= Introduction =
+Simply extract the zip file into your /application directory.  The files are already in the appropriate subfolders.
 
-Add your content here.
+= Upgrading the database tables =
 
+Run firestick-upgrade-1.0-1.1.sql.  If you wish to upgrade any logging tables (today's is a good idea), just change the table name to that day's logging table's name.  Ensure that if you use a different database than "logs" you alter that in the upgrade script.
 
-= Details =
+The upgraded tables can be used with old versions of Firestick, as they only add columns.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Configuration =
+
+ * Add the following two hooks to your config/hooks.php:
+{{{
+$hook['post_controller_constructor'] = array(
+    'class'    => 'Firestick',
+    'function' => 'pre_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+
+$hook['post_controller'] = array(
+    'class'    => 'Firestick',
+    'function' => 'post_application',
+    'filename' => 'Firestick.php',
+    'filepath' => 'libraries'
+);
+}}}
