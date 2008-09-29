@@ -1,14 +1,14 @@
-= Upgrading the source =
+=== Upgrading the source ===
 
 Simply extract the zip file into your /application directory.  The files are already in the appropriate subfolders.
 
-= Upgrading the database tables =
+=== Upgrading the database tables ===
 
 Run firestick-upgrade-1.0-1.1.sql.  If you wish to upgrade any logging tables (today's is a good idea), just change the table name to that day's logging table's name.  Ensure that if you use a different database than "logs" you alter that in the upgrade script.
 
 The upgraded tables can be used with old versions of Firestick, as they only add columns.
 
-= Configuration =
+=== Configuration ===
 
  * Add the following two hooks to your config/hooks.php:
 {{{
