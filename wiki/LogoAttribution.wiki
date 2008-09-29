@@ -1,3 +1,4 @@
 #summary Credit for the logo.
+#labels Featured
 
 Logo created by Jacob Johnson. http://jacob-johnson.com/
